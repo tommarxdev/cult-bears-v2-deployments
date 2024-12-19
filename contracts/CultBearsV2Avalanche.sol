@@ -51,6 +51,10 @@ contract CultBearsV2Avalanche is ONFT721, ReentrancyGuard, ERC2981, Pausable {
     event RoyaltySet(address indexed receiver, uint96 feeNumerator);
     event PrivateMintPriceUpdated(TokenRarityType rarity, uint256 newPrice);
     event PublicMintPriceUpdated(TokenRarityType rarity, uint256 newPrice);
+    event OGWhitelistAdded(address indexed whitelistee);
+    event OGWhitelistRemoved(address indexed whitelistee);
+    event BearlistedWhitelistAdded(address indexed whitelistee);
+    event BearlistedWhitelistRemoved(address indexed whitelistee);
 
     constructor(
         string memory _name,
@@ -88,11 +92,11 @@ contract CultBearsV2Avalanche is ONFT721, ReentrancyGuard, ERC2981, Pausable {
 
     receive() external payable {}
 
-    function _exists(uint256 tokenId) internal view virtual whenNotPaused returns (bool) {
+    function _exists(uint256 tokenId) internal view virtual returns (bool) {
         return mintedTokens[tokenId] || (tokenId > 1000); 
     }
 
-    function tokenURI(uint256 tokenId) public view override whenNotPaused returns (string memory) {
+    function tokenURI(uint256 tokenId) public view override returns (string memory) {
         require(tokenId > 0 && tokenId <= 2000, "Token ID out of range");
         return string(abi.encodePacked(baseURI, "cult-bear-", tokenId.toString(), fileExtension));
     }
@@ -130,6 +134,28 @@ contract CultBearsV2Avalanche is ONFT721, ReentrancyGuard, ERC2981, Pausable {
 
     function getPrice(TokenRarityType rarityType) external view returns (uint256) {
         return isPublicMintAllowed ? publicSalePrice[rarityType] : privateSalePrice[rarityType];
+    }
+
+    function addToOGWhitelist(address whitelistee) public onlyOwner {
+        require(!bearlistedWhitelist[whitelistee], 'Whitelistee is already present in the bearlisted whitelist');
+        ogWhitelist[whitelistee] = true;
+        emit OGWhitelistAdded(whitelistee);
+    }
+
+    function addToBearlistedWhitelist(address whitelistee) public onlyOwner {
+        require(!ogWhitelist[whitelistee], 'Whitelistee is already present in the OG whitelist');
+        bearlistedWhitelist[whitelistee] = true;
+        emit BearlistedWhitelistAdded(whitelistee);
+    }
+
+    function removeFromOGWhitelist(address whitelistee) public onlyOwner {
+        ogWhitelist[whitelistee] = false;
+        emit OGWhitelistRemoved(whitelistee);
+    }
+
+    function removeFromBearlistedWhitelist(address whitelistee) public onlyOwner {
+        bearlistedWhitelist[whitelistee] = false;
+        emit BearlistedWhitelistRemoved(whitelistee);
     }
 
     function setTokenRoyalty(uint256 tokenId, address receiver, uint96 feeNumerator) external onlyOwner whenNotPaused {
@@ -226,7 +252,7 @@ contract CultBearsV2Avalanche is ONFT721, ReentrancyGuard, ERC2981, Pausable {
         treasuryWallet = _treasuryWallet;
     }
 
-    function _isValidTokenID(uint256 tokenID) internal view whenNotPaused returns (bool) {
+    function _isValidTokenID(uint256 tokenID) internal view returns (bool) {
         for (uint8 i = 0; i <= uint8(TokenRarityType.MYTHIC); i++) {
             TokenIDRange memory range = tokenIDRange[TokenRarityType(i)];
             if (tokenID >= range.start && tokenID < range.start + range.amount) {

@@ -42,7 +42,7 @@ contract CultBearsV2 is ONFT721, ERC2981, Pausable {
         emit FileExtensionUpdated(extension);
     }
 
-    function tokenURI(uint256 tokenId) public view virtual override whenNotPaused returns (string memory) {
+    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
         require(_existsToken(tokenId), "ERC721Metadata: URI query for nonexistent token");
         return string(abi.encodePacked(baseURI, "cult-bear-", tokenId.toString(), fileExtension));
     }
