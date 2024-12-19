@@ -2,7 +2,7 @@ import assert from 'assert'
 
 import { type DeployFunction } from 'hardhat-deploy/types'
 
-const contractName = 'CultBearsV2'
+const contractName = 'CultBearsV2Avalanche'
 
 const deploy: DeployFunction = async (hre) => {
     const { getNamedAccounts, deployments } = hre
@@ -24,13 +24,13 @@ const deploy: DeployFunction = async (hre) => {
             'CBEARS', // symbol
             endpointV2Deployment.address, // LayerZero's EndpointV2 address
             deployer, // owner and delegate
-            'https://arweave.net/EBRFxtP5XQa6cOO2Hbn4dUa2RQl2KBbf8y0FyXTG5co/' // initial baseUri
+            'https://arweave.net/EBRFxtP5XQa6cOO2Hbn4dUa2RQl2KBbf8y0FyXTG5co/', // initial baseUri
+            deployer // initial treasuryWallet
 
 
         ],
         log: true,
         skipIfAlreadyDeployed: false,
-        // gasLimit: 300000, // Still returns out of gas on SEI Testnet EVM - must be retried with more faucet funds - could also be less EVM compatible than other networks
     })
 
     console.log(`Deployed contract: ${contractName}, network: ${hre.network.name}, address: ${address}`)
