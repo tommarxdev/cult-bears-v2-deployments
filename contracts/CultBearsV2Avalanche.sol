@@ -3,9 +3,9 @@ pragma solidity ^0.8.22;
 
 import '@layerzerolabs/onft-evm/contracts/onft721/ONFT721.sol';
 import '@openzeppelin/contracts/utils/Strings.sol';
-import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
+import '@openzeppelin/contracts/utils/ReentrancyGuard.sol';
 import '@openzeppelin/contracts/token/common/ERC2981.sol';
-import '@openzeppelin/contracts/security/Pausable.sol';
+import '@openzeppelin/contracts/utils/Pausable.sol';
 
 contract CultBearsV2Avalanche is ONFT721, ReentrancyGuard, ERC2981, Pausable {
     using Strings for uint256;
