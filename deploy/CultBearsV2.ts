@@ -25,8 +25,6 @@ const deploy: DeployFunction = async (hre) => {
             endpointV2Deployment.address, // LayerZero's EndpointV2 address
             deployer, // owner and delegate
             'https://arweave.net/EBRFxtP5XQa6cOO2Hbn4dUa2RQl2KBbf8y0FyXTG5co/' // initial baseUri
-
-
         ],
         log: true,
         skipIfAlreadyDeployed: false,
