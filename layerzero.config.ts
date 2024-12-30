@@ -8,15 +8,13 @@ import type { OAppEdgeConfig, OAppOmniGraphHardhat, OmniPointHardhat } from '@la
 // AVAX
 // BASE
 // SONIC
-
 // ETH
 // BNB
 // ARB
-
 // POL
 // OP
 
-// SEI
+// SEI -- Issue during deployment
 
 const fujiContract: OmniPointHardhat = {
     eid: EndpointId.AVALANCHE_V2_TESTNET,
@@ -38,8 +36,23 @@ const bscTestnetContract: OmniPointHardhat = {
     contractName: 'CultBearsV2',
 }
 
-const sepoliaContract: OmniPointHardhat = {
+const ethereumSepoliaContract: OmniPointHardhat = {
     eid: EndpointId.SEPOLIA_V2_TESTNET,
+    contractName: 'CultBearsV2',
+}
+
+const arbitrumSepoliaContract: OmniPointHardhat = {
+    eid: 40231,
+    contractName: 'CultBearsV2',
+}
+
+const optimismSepoliaContract: OmniPointHardhat = {
+    eid: 40232,
+    contractName: 'CultBearsV2',
+}
+
+const polygonAmoyContract: OmniPointHardhat = {
+    eid: EndpointId.AMOY_V2_TESTNET,
     contractName: 'CultBearsV2',
 }
 
@@ -76,7 +89,16 @@ const config: OAppOmniGraphHardhat = {
             contract: bscTestnetContract,
         },
         {
-            contract: sepoliaContract,
+            contract: ethereumSepoliaContract,
+        },
+        {
+            contract: arbitrumSepoliaContract,
+        },
+        {
+            contract: optimismSepoliaContract,
+        },
+        {
+            contract: polygonAmoyContract,
         },
     ],
     connections: [
@@ -96,6 +118,26 @@ const config: OAppOmniGraphHardhat = {
             config: DEFAULT_EDGE_CONFIG,
         },
         {
+            from: fujiContract,
+            to: ethereumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: fujiContract,
+            to: arbitrumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: fujiContract,
+            to: optimismSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: fujiContract,
+            to: polygonAmoyContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
             from: baseSepoliaContract,
             to: fujiContract,
             config: DEFAULT_EDGE_CONFIG,
@@ -108,6 +150,26 @@ const config: OAppOmniGraphHardhat = {
         {
             from: baseSepoliaContract,
             to: bscTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: baseSepoliaContract,
+            to: ethereumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: baseSepoliaContract,
+            to: arbitrumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: baseSepoliaContract,
+            to: optimismSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: baseSepoliaContract,
+            to: polygonAmoyContract,
             config: DEFAULT_EDGE_CONFIG,
         },
         {
@@ -126,6 +188,26 @@ const config: OAppOmniGraphHardhat = {
             config: DEFAULT_EDGE_CONFIG,
         },
         {
+            from: sonicTestnetContract,
+            to: ethereumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: sonicTestnetContract,
+            to: arbitrumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: sonicTestnetContract,
+            to: optimismSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: sonicTestnetContract,
+            to: polygonAmoyContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
             from: bscTestnetContract,
             to: baseSepoliaContract,
             config: DEFAULT_EDGE_CONFIG,
@@ -138,6 +220,166 @@ const config: OAppOmniGraphHardhat = {
         {
             from: bscTestnetContract,
             to: sonicTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: bscTestnetContract,
+            to: ethereumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: bscTestnetContract,
+            to: arbitrumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: bscTestnetContract,
+            to: optimismSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: bscTestnetContract,
+            to: polygonAmoyContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: ethereumSepoliaContract,
+            to: fujiContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: ethereumSepoliaContract,
+            to: baseSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: ethereumSepoliaContract,
+            to: sonicTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: ethereumSepoliaContract,
+            to: bscTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: ethereumSepoliaContract,
+            to: arbitrumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: ethereumSepoliaContract,
+            to: optimismSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: ethereumSepoliaContract,
+            to: polygonAmoyContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: arbitrumSepoliaContract,
+            to: fujiContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: arbitrumSepoliaContract,
+            to: baseSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: arbitrumSepoliaContract,
+            to: sonicTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: arbitrumSepoliaContract,
+            to: bscTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: arbitrumSepoliaContract,
+            to: ethereumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: arbitrumSepoliaContract,
+            to: optimismSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: arbitrumSepoliaContract,
+            to: polygonAmoyContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: optimismSepoliaContract,
+            to: fujiContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: optimismSepoliaContract,
+            to: baseSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: optimismSepoliaContract,
+            to: sonicTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: optimismSepoliaContract,
+            to: bscTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: optimismSepoliaContract,
+            to: ethereumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: optimismSepoliaContract,
+            to: arbitrumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: optimismSepoliaContract,
+            to: polygonAmoyContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: polygonAmoyContract,
+            to: fujiContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: polygonAmoyContract,
+            to: baseSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: polygonAmoyContract,
+            to: sonicTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: polygonAmoyContract,
+            to: bscTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: polygonAmoyContract,
+            to: ethereumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: polygonAmoyContract,
+            to: arbitrumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: polygonAmoyContract,
+            to: optimismSepoliaContract,
             config: DEFAULT_EDGE_CONFIG,
         },
     ],
