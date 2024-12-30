@@ -1,5 +1,32 @@
 // TESTNET_DEPOLYMENTS
 
+// -- EVM  --
+// ETH
+// BNB
+// ARB
+// AVAX
+// BASE
+// SONIC
+// SEI
+// POL
+// OP
+
+// -- RUST --
+// SOL
+
+// -- NOT YET LIVE ON LZ --
+// MONAD
+// SUI
+// APT
+// TON 
+// SONEIUM
+
 const CultBearsV2Avalanche = "0x66fF7f6Fa24A73fFe916071FF8FDac0C6A2118dd"
 const CultBearsV2Base = "0x66fF7f6Fa24A73fFe916071FF8FDac0C6A2118dd"
+
 const CultBearsV2Sonic = "0x66fF7f6Fa24A73fFe916071FF8FDac0C6A2118dd"
+const CultBearsV2BNB = "0x66fF7f6Fa24A73fFe916071FF8FDac0C6A2118dd"
+const CultBearsV2Arbitrum = "0x66fF7f6Fa24A73fFe916071FF8FDac0C6A2118dd"
+const CultBearsV2Optimism = "0x66fF7f6Fa24A73fFe916071FF8FDac0C6A2118dd"
+const CultBearsV2Sepolia = "0x66fF7f6Fa24A73fFe916071FF8FDac0C6A2118dd"
+const CultBearsV2Amoy = "0x66fF7f6Fa24A73fFe916071FF8FDac0C6A2118dd"

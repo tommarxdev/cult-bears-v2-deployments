@@ -22,7 +22,7 @@ const deploy: DeployFunction = async (hre) => {
         args: [
             'Cult Bears', // name
             'CBEARS', // symbol
-            endpointV2Deployment.address, // LayerZero's EndpointV2 address
+            '0x6EDCE65403992e310A62460808c4b910D972f10f', // endpointV2Deployment.address, // LayerZero's EndpointV2 address
             deployer, // owner and delegate
             'https://arweave.net/EBRFxtP5XQa6cOO2Hbn4dUa2RQl2KBbf8y0FyXTG5co/' // initial baseUri
         ],

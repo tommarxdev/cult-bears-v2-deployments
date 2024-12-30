@@ -3,6 +3,21 @@ import { ExecutorOptionType } from '@layerzerolabs/lz-v2-utilities'
 
 import type { OAppEdgeConfig, OAppOmniGraphHardhat, OmniPointHardhat } from '@layerzerolabs/toolbox-hardhat'
 
+// -- EVM  --
+
+// AVAX
+// BASE
+// SONIC
+
+// ETH
+// BNB
+// ARB
+
+// POL
+// OP
+
+// SEI
+
 const fujiContract: OmniPointHardhat = {
     eid: EndpointId.AVALANCHE_V2_TESTNET,
     contractName: 'CultBearsV2Avalanche',
@@ -18,8 +33,13 @@ const sonicTestnetContract: OmniPointHardhat = {
     contractName: 'CultBearsV2',
 }
 
-const seiTestnetContract: OmniPointHardhat = {
-    eid: EndpointId.SEI_V2_TESTNET,
+const bscTestnetContract: OmniPointHardhat = {
+    eid: EndpointId.BSC_V2_TESTNET,
+    contractName: 'CultBearsV2',
+}
+
+const sepoliaContract: OmniPointHardhat = {
+    eid: EndpointId.SEPOLIA_V2_TESTNET,
     contractName: 'CultBearsV2',
 }
 
@@ -53,7 +73,10 @@ const config: OAppOmniGraphHardhat = {
             contract: sonicTestnetContract,
         },
         {
-            contract: seiTestnetContract,
+            contract: bscTestnetContract,
+        },
+        {
+            contract: sepoliaContract,
         },
     ],
     connections: [
@@ -69,7 +92,7 @@ const config: OAppOmniGraphHardhat = {
         },
         {
             from: fujiContract,
-            to: seiTestnetContract,
+            to: bscTestnetContract,
             config: DEFAULT_EDGE_CONFIG,
         },
         {
@@ -84,7 +107,7 @@ const config: OAppOmniGraphHardhat = {
         },
         {
             from: baseSepoliaContract,
-            to: seiTestnetContract,
+            to: bscTestnetContract,
             config: DEFAULT_EDGE_CONFIG,
         },
         {
@@ -99,21 +122,21 @@ const config: OAppOmniGraphHardhat = {
         },
         {
             from: sonicTestnetContract,
-            to: seiTestnetContract,
+            to: bscTestnetContract,
             config: DEFAULT_EDGE_CONFIG,
         },
         {
-            from: seiTestnetContract,
+            from: bscTestnetContract,
             to: baseSepoliaContract,
             config: DEFAULT_EDGE_CONFIG,
         },
         {
-            from: seiTestnetContract,
+            from: bscTestnetContract,
             to: fujiContract,
             config: DEFAULT_EDGE_CONFIG,
         },
         {
-            from: seiTestnetContract,
+            from: bscTestnetContract,
             to: sonicTestnetContract,
             config: DEFAULT_EDGE_CONFIG,
         },

@@ -67,9 +67,29 @@ const config: HardhatUserConfig = {
             url: process.env.SONIC_TESTNET_RPC_URL,
             accounts,
         },
-        'sei-testnet': {
-            eid: EndpointId.SEI_V2_TESTNET,
-            url: process.env.SEI_TESTNET_RPC_URL,
+        'sepolia-testnet': {
+            eid: EndpointId.SEPOLIA_V2_TESTNET,
+            url: process.env.SEPOLIA_TESTNET_RPC_URL,
+            accounts,
+        },
+        'bsc-testnet': {
+            eid: EndpointId.BSC_V2_TESTNET,
+            url: process.env.BSC_TESTNET_RPC_URL,
+            accounts,
+        },
+        'arbitrum-testnet': {
+            eid: 40231,
+            url: process.env.ARB_TESTNET_RPC_URL,
+            accounts,
+        },
+        'optimism-testnet': {
+            eid: 40232,
+            url: process.env.OP_TESTNET_RPC_URL,
+            accounts,
+        },
+        'polygon-testnet': {
+            eid: EndpointId.AMOY_V2_TESTNET,
+            url: process.env.POL_TESTNET_RPC_URL,
             accounts,
         },
         hardhat: {
