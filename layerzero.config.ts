@@ -56,6 +56,11 @@ const polygonAmoyContract: OmniPointHardhat = {
     contractName: 'CultBearsV2',
 }
 
+const soneiumMinatoContract: OmniPointHardhat = {
+    eid: EndpointId.MINATO_V2_TESTNET,
+    contractName: 'CultBearsV2',
+}
+
 const DEFAULT_EDGE_CONFIG: OAppEdgeConfig = {
     enforcedOptions: [
         {
@@ -100,6 +105,9 @@ const config: OAppOmniGraphHardhat = {
         {
             contract: polygonAmoyContract,
         },
+        {
+            contract: soneiumMinatoContract,
+        },
     ],
     connections: [
         {
@@ -138,6 +146,11 @@ const config: OAppOmniGraphHardhat = {
             config: DEFAULT_EDGE_CONFIG,
         },
         {
+            from: fujiContract,
+            to: soneiumMinatoContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
             from: baseSepoliaContract,
             to: fujiContract,
             config: DEFAULT_EDGE_CONFIG,
@@ -170,6 +183,11 @@ const config: OAppOmniGraphHardhat = {
         {
             from: baseSepoliaContract,
             to: polygonAmoyContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: baseSepoliaContract,
+            to: soneiumMinatoContract,
             config: DEFAULT_EDGE_CONFIG,
         },
         {
@@ -208,6 +226,11 @@ const config: OAppOmniGraphHardhat = {
             config: DEFAULT_EDGE_CONFIG,
         },
         {
+            from: sonicTestnetContract,
+            to: soneiumMinatoContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
             from: bscTestnetContract,
             to: baseSepoliaContract,
             config: DEFAULT_EDGE_CONFIG,
@@ -240,6 +263,11 @@ const config: OAppOmniGraphHardhat = {
         {
             from: bscTestnetContract,
             to: polygonAmoyContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: bscTestnetContract,
+            to: soneiumMinatoContract,
             config: DEFAULT_EDGE_CONFIG,
         },
         {
@@ -278,6 +306,11 @@ const config: OAppOmniGraphHardhat = {
             config: DEFAULT_EDGE_CONFIG,
         },
         {
+            from: ethereumSepoliaContract,
+            to: soneiumMinatoContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
             from: arbitrumSepoliaContract,
             to: fujiContract,
             config: DEFAULT_EDGE_CONFIG,
@@ -310,6 +343,11 @@ const config: OAppOmniGraphHardhat = {
         {
             from: arbitrumSepoliaContract,
             to: polygonAmoyContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: arbitrumSepoliaContract,
+            to: soneiumMinatoContract,
             config: DEFAULT_EDGE_CONFIG,
         },
         {
@@ -348,6 +386,11 @@ const config: OAppOmniGraphHardhat = {
             config: DEFAULT_EDGE_CONFIG,
         },
         {
+            from: optimismSepoliaContract,
+            to: soneiumMinatoContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
             from: polygonAmoyContract,
             to: fujiContract,
             config: DEFAULT_EDGE_CONFIG,
@@ -380,6 +423,51 @@ const config: OAppOmniGraphHardhat = {
         {
             from: polygonAmoyContract,
             to: optimismSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: polygonAmoyContract,
+            to: soneiumMinatoContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: soneiumMinatoContract,
+            to: fujiContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: soneiumMinatoContract,
+            to: baseSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: soneiumMinatoContract,
+            to: sonicTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: soneiumMinatoContract,
+            to: bscTestnetContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: soneiumMinatoContract,
+            to: ethereumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: soneiumMinatoContract,
+            to: arbitrumSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: soneiumMinatoContract,
+            to: optimismSepoliaContract,
+            config: DEFAULT_EDGE_CONFIG,
+        },
+        {
+            from: soneiumMinatoContract,
+            to: polygonAmoyContract,
             config: DEFAULT_EDGE_CONFIG,
         },
     ],
