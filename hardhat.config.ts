@@ -92,6 +92,11 @@ const config: HardhatUserConfig = {
             url: process.env.POL_TESTNET_RPC_URL,
             accounts,
         },
+        'soneium-testnet': {
+            eid: EndpointId.MINATO_V2_TESTNET,
+            url: process.env.MINATO_TESTNET_RPC_URL,
+            accounts,
+        },
         hardhat: {
             // Need this for testing because TestHelperOz5.sol is exceeding the compiled contract size limit
             allowUnlimitedContractSize: true,
