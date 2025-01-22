@@ -11,7 +11,7 @@ const fujiContract: OmniPointHardhat = {
 }
 
 const soneiumMinatoContract: OmniPointHardhat = {
-    eid: EndpointId.MINATO_V2_TESTNET,
+    eid: EndpointId.SONEIUM_MAINNET,
     contractName: 'CultBearsV2',
 }
 
