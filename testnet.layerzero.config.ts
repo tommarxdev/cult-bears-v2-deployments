@@ -14,8 +14,6 @@ import type { OAppEdgeConfig, OAppOmniGraphHardhat, OmniPointHardhat } from '@la
 // POL
 // OP
 
-// SEI -- Issue during deployment
-
 const fujiContract: OmniPointHardhat = {
     eid: EndpointId.AVALANCHE_V2_TESTNET,
     contractName: 'CultBearsV2Avalanche',
