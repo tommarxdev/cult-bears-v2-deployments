@@ -32,7 +32,7 @@ const config: OAppOmniGraphHardhat = {
               sendLibrary: "0xcc1ae8Cf5D3904Cef3360A9532B477529b177cCE",
               receiveLibraryConfig: {
                 // Required Receive Library Address on Ethereum Sepolia
-                receiveLibrary: "0xdAf00F5eE2158dD58E0d3857851c432E34A3A851",
+                receiveLibrary: "0x188d4bbCeD671A7aA2b5055937F79510A32e9683",
                 // Optional Grace Period for Switching Receive Library Address on Ethereum Sepolia
                 gracePeriod: BigInt(0),
               },
@@ -102,9 +102,9 @@ const config: OAppOmniGraphHardhat = {
             from: bscContract,
             to: sepoliaContract,
             config: {
-                  sendLibrary: "0x55f16c442907e86D764AFdc2a07C2de3BdAc8BB7",
+                  sendLibrary: "0x188d4bbCeD671A7aA2b5055937F79510A32e9683",
                   receiveLibraryConfig: {
-                    receiveLibrary: "0x188d4bbCeD671A7aA2b5055937F79510A32e9683",
+                    receiveLibrary: "0xcc1ae8cf5d3904cef3360a9532b477529b177cce",
                     gracePeriod: BigInt(0),
                   },
                   receiveLibraryTimeoutConfig: {
@@ -118,7 +118,7 @@ const config: OAppOmniGraphHardhat = {
                     },
                     ulnConfig: {
                       confirmations: BigInt(6),
-                      requiredDVNs: ["0x31894b190a8bAbd9A067Ce59fde0BfCFD2B18470"],
+                      requiredDVNs: ["0x0ee552262f7b562efced6dd4a7e2878ab897d405"],
                       optionalDVNs: [],
                       optionalDVNThreshold: 0,
                     },
@@ -152,3 +152,5 @@ const config: OAppOmniGraphHardhat = {
 }
 
 export default config
+
+// npx hardhat lz:oapp:wire --oapp-config layerzero.demo.config.ts
